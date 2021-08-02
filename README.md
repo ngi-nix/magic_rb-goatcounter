@@ -1,7 +1,7 @@
-# pmbootstrap
+# goatcounter
 
-- upsteam: https://gitlab.com/postmarketOS/pmbootstrap
-- ngi-nix: https://github.com/ngi-nix/ngi/issues/198
+- upsteam: <https://github.com/zgoat/goatcounter>
+- ngi-nix: <https://github.com/ngi-nix/ngi/issues/158>
 
 GoatCounter is an open source web analytics platform available as a hosted service (free for non-commercial use) or self-hosted app. It aims to offer easy to use and meaningful privacy-friendly web analytics as an alternative to Google Analytics or Matomo.
 
@@ -11,7 +11,7 @@ GoatCounter is an open source web analytics platform available as a hosted servi
 
 In order to use this [flake](https://nixos.wiki/wiki/Flakes) you realistically need to be running [NixOS](https://nixos.org/) and then you can import a module that this flakes provides at `nixosModule`, but if you know what you're doing you can also run goatcounter manually with:
 
-> :warning: You will need to setup the goatcounter config file and an appropriate database.
+> :warning: You will need to setup the goatcounter config parameters and an appropriate database.
 
 ```
 $ nix run github:ngi-nix/magic_rb-goatcounter
