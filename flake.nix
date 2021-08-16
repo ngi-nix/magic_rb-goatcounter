@@ -60,7 +60,7 @@
           self.packages.${system}.goatcounter
         );
 
-        applications = self.packages;
+        apps = self.packages;
 
         defaultApp = self.defaultPackage;
 
