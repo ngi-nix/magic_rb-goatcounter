@@ -64,19 +64,7 @@
 
         defaultApp = self.defaultPackage;
 
-        devShell = forAllSystems (system:
-          let
-            pkgs = import nixpkgs
-              { inherit system;
-                overlays = mapAttrsToList (_: id) self.overlays;
-              };
-          in
-            pkgs.mkShell {
-              nativeBuildInputs = with pkgs;
-                [ go
-                ];
-            }
-        );
+        devShell = forAllSystems (system: self.packages.${system}.goatcounter);
 
         nixosModules.goatcounter = import ./module.nix;
 
