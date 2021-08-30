@@ -411,9 +411,11 @@ in
       };
 
     assertions =
-      [ { assertion = with cfg.dbBackend;
-            (sqlite == null && postgresql != null) ||
-            (sqlite != null && postgresql == null);
+      [ { assertion =
+            count
+              (x: x != null)
+              (mapAttrsToList nameValuePair cfg.dbBackend)
+            == 1;
           message = "goatcounter - Exactly one database backend has to be enabled.";
         }
         { assertion =
