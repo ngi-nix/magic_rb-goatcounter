@@ -60,9 +60,18 @@
           self.packages.${system}.goatcounter
         );
 
-        apps = self.packages;
+        apps = mapAttrs (_: v:
+          mapAttrs (_: a:
+            {
+              type = "app";
+              program = a;
+            }
+          ) v
+        ) self.packages;
 
-        defaultApp = self.defaultPackage;
+        defaultApp = mapAttrs (_: v:
+          v.goatcounter
+        ) self.apps;
 
         devShell = forAllSystems (system: self.packages.${system}.goatcounter);
 
