@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
   };
 
   outputs = { self, nixpkgs, ... }:
@@ -101,7 +101,7 @@
                 ({ pkgs, ... }: {
                   name = "help";
 
-                  machine = systemModule
+                  nodes.machine = systemModule
                     { sqlite = {};
                       postgresql = null;
                     };
@@ -122,7 +122,7 @@
                 ({ pkgs, ... }: {
                   name = "help";
 
-                  machine = systemModule
+                  nodes.machine = systemModule
                     { sqlite = null;
                       postgresql = {};
                     };

@@ -4,12 +4,12 @@
 with lib;
 let
   pname = "goatcounter";
-  version = "2.0.4";
+  version = "2.2.3";
 in
 buildGoModule {
   inherit pname version;
 
-  vendorSha256 = "sha256-z9SoAASihdTo2Q23hwo78SU76jVD4jvA0UVhredidOQ=";
+  vendorSha256 = "sha256-fzOLsnEEF6m2bf9E0V76wfokyiH3SfUxENbSRgTLhZM=";
 
   subPackages = [
     "cmd/goatcounter"
@@ -23,6 +23,6 @@ buildGoModule {
     owner = "zgoat";
     repo = pname;
     rev = "v" + version;
-    sha256 = "sha256-Le0ZQ9iYrCEcYko1i6ETyi+SFOUMuWOoEJDd6nNxiuQ=";
+    sha256 = "sha256-M/GMfc/3mhl5DpgDIi7AdOnWmm/1/HyYioqxYP0Yqnc=";
   };
 }
